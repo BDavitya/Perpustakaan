@@ -138,110 +138,113 @@
 <!-- ================= FORM REGISTRASI ================= -->
 <section class="max-w-4xl mx-auto px-4 lg:px-0 mb-20">
 
-    <div class="bg-white rounded-2xl shadow-md p-8 space-y-10">
+    <form action="{{ url('/register') }}" method="POST" class="max-w-4xl mx-auto px-4 lg:px-0 mb-20">
+    @csrf
+        <div class="bg-white rounded-2xl shadow-md p-8 space-y-10">
 
-        <!-- INFORMASI PRIBADI -->
-        <div>
-            <div class="flex items-center gap-3 mb-6">
-                <div class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold">1</div>
-                <h2 class="text-lg font-semibold">Informasi Pribadi</h2>
+            <!-- INFORMASI PRIBADI -->
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold">1</div>
+                    <h2 class="text-lg font-semibold">Informasi Pribadi</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+
+                    <div>
+                        <label class="text-sm font-semibold">Nama Lengkap *</label>
+                        <input type="text" name="name" required class="mt-1 w-full px-4 py-2 border rounded-lg text-sm" placeholder="Masukkan nama lengkap">
+                    </div>
+
+                    <div>
+                        <label class="text-sm font-semibold">Email *</label>
+                        <input type="email" name="email" required class="mt-1 w-full px-4 py-2 border rounded-lg text-sm" placeholder="nama@email.com">
+                    </div>
+
+                    <div>
+                        <label class="text-sm font-semibold">Nomor Telepon *</label>
+                        <input type="text" name="phone" required class="mt-1 w-full px-4 py-2 border rounded-lg text-sm" placeholder="08xx xxxx xxxx">
+                    </div>
+
+                    <div>
+                        <label class="text-sm font-semibold">Tanggal Lahir *</label>
+                        <input type="date" name="birth_date" required class="mt-1 w-full px-4 py-2 border rounded-lg text-sm">
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <label class="text-sm font-semibold">Jenis Kelamin *</label>
+                    <div class="flex items-center gap-6 mt-2 text-sm">
+                        <label class="flex items-center gap-2">
+                            <input type="radio" name="gender" value="L" class="accent-green-600"> Laki-laki
+                        </label>
+                        <label class="flex items-center gap-2">
+                            <input type="radio" name="gender" value="P" class="accent-green-600"> Perempuan
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <label class="text-sm font-semibold">Alamat Lengkap *</label>
+                    <textarea class="mt-1 w-full px-4 py-2 border rounded-lg text-sm h-24" name="address" required placeholder="Masukkan alamat lengkap"></textarea>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6">
-
-                <div>
-                    <label class="text-sm font-semibold">Nama Lengkap *</label>
-                    <input type="text" class="mt-1 w-full px-4 py-2 border rounded-lg text-sm" placeholder="Masukkan nama lengkap">
+            <!-- INFORMASI AKUN -->
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 rounded-full bg-yellow-500 text-white flex items-center justify-center text-sm font-bold">2</div>
+                    <h2 class="text-lg font-semibold">Informasi Akun</h2>
                 </div>
 
-                <div>
-                    <label class="text-sm font-semibold">Email *</label>
-                    <input type="email" class="mt-1 w-full px-4 py-2 border rounded-lg text-sm" placeholder="nama@email.com">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="text-sm font-semibold">Username *</label>
+                        <input type="text" name="username" required class="mt-1 w-full px-4 py-2 border rounded-lg text-sm" placeholder="Pilih username">
+                    </div>
+
+                    <div>
+                        <label class="text-sm font-semibold">Password *</label>
+                        <input type="password" name="password" required class="mt-1 w-full px-4 py-2 border rounded-lg text-sm" placeholder="Minimal 8 karakter">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="text-sm font-semibold">Konfirmasi Password *</label>
+                        <input type="password" name="password_confirmation" required class="mt-1 w-full px-4 py-2 border rounded-haspopup rounded-lg text-sm" placeholder="Masukkan ulang password">
+                    </div>
                 </div>
 
-                <div>
-                    <label class="text-sm font-semibold">Nomor Telepon *</label>
-                    <input type="text" class="mt-1 w-full px-4 py-2 border rounded-lg text-sm" placeholder="08xx xxxx xxxx">
-                </div>
-
-                <div>
-                    <label class="text-sm font-semibold">Tanggal Lahir *</label>
-                    <input type="date" class="mt-1 w-full px-4 py-2 border rounded-lg text-sm">
-                </div>
-            </div>
-
-            <div class="mt-6">
-                <label class="text-sm font-semibold">Jenis Kelamin *</label>
-                <div class="flex items-center gap-6 mt-2 text-sm">
-                    <label class="flex items-center gap-2">
-                        <input type="radio" name="gender" class="accent-green-600"> Laki-laki
+                <div class="mt-5">
+                    <label class="flex items-start gap-2 text-sm">
+                        <input type="checkbox" name="terms" required class="mt-1 accent-green-600">
+                        <span>Saya menyetujui syarat dan ketentuan perpustakaan.</span>
                     </label>
-                    <label class="flex items-center gap-2">
-                        <input type="radio" name="gender" class="accent-green-600"> Perempuan
-                    </label>
+                </div>
+
+                <div class="mt-6 flex justify-end">
+                    <button class="px-6 py-2 bg-green-600 text-white rounded-lg text-sm font-semibold hover:bg-green-700">
+                        Daftar
+                    </button>
                 </div>
             </div>
 
-            <div class="mt-6">
-                <label class="text-sm font-semibold">Alamat Lengkap *</label>
-                <textarea class="mt-1 w-full px-4 py-2 border rounded-lg text-sm h-24" placeholder="Masukkan alamat lengkap"></textarea>
-            </div>
         </div>
 
-        <!-- INFORMASI AKUN -->
-        <div>
-            <div class="flex items-center gap-3 mb-6">
-                <div class="w-8 h-8 rounded-full bg-yellow-500 text-white flex items-center justify-center text-sm font-bold">2</div>
-                <h2 class="text-lg font-semibold">Informasi Akun</h2>
+        <!-- INFORMASI PENTING -->
+        <div class="bg-blue-50 mt-10 rounded-2xl p-6 shadow-sm border border-blue-100">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-8 h-8 bg-blue-600 text-white flex items-center justify-center rounded-full text-sm font-bold">i</div>
+                <h3 class="text-sm font-semibold text-blue-700">Informasi Penting</h3>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                    <label class="text-sm font-semibold">Username *</label>
-                    <input type="text" class="mt-1 w-full px-4 py-2 border rounded-lg text-sm" placeholder="Pilih username">
-                </div>
-
-                <div>
-                    <label class="text-sm font-semibold">Password *</label>
-                    <input type="password" class="mt-1 w-full px-4 py-2 border rounded-lg text-sm" placeholder="Minimal 8 karakter">
-                </div>
-
-                <div class="md:col-span-2">
-                    <label class="text-sm font-semibold">Konfirmasi Password *</label>
-                    <input type="password" class="mt-1 w-full px-4 py-2 border rounded-haspopup rounded-lg text-sm" placeholder="Masukkan ulang password">
-                </div>
-            </div>
-
-            <div class="mt-5">
-                <label class="flex items-start gap-2 text-sm">
-                    <input type="checkbox" class="mt-1 accent-green-600">
-                    <span>Saya menyetujui syarat dan ketentuan perpustakaan.</span>
-                </label>
-            </div>
-
-            <div class="mt-6 flex justify-end">
-                <button class="px-6 py-2 bg-green-600 text-white rounded-lg text-sm font-semibold hover:bg-green-700">
-                    Daftar
-                </button>
-            </div>
+            <ul class="text-xs text-gray-600 space-y-1 ml-10">
+                <li>Pendaftaran keanggotaan gratis</li>
+                <li>Verifikasi membutuhkan waktu 1–2 hari kerja</li>
+                <li>Email konfirmasi dikirim setelah verifikasi</li>
+                <li>Kartu anggota dapat diambil di perpustakaan</li>
+            </ul>
         </div>
-
-    </div>
-
-    <!-- INFORMASI PENTING -->
-    <div class="bg-blue-50 mt-10 rounded-2xl p-6 shadow-sm border border-blue-100">
-        <div class="flex items-center gap-3 mb-2">
-            <div class="w-8 h-8 bg-blue-600 text-white flex items-center justify-center rounded-full text-sm font-bold">i</div>
-            <h3 class="text-sm font-semibold text-blue-700">Informasi Penting</h3>
-        </div>
-
-        <ul class="text-xs text-gray-600 space-y-1 ml-10">
-            <li>Pendaftaran keanggotaan gratis</li>
-            <li>Verifikasi membutuhkan waktu 1–2 hari kerja</li>
-            <li>Email konfirmasi dikirim setelah verifikasi</li>
-            <li>Kartu anggota dapat diambil di perpustakaan</li>
-        </ul>
-    </div>
+    </form>
 
 </section>
 

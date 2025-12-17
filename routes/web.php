@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 // ==========================
 // ROUTE HALAMAN PENGUNJUNG
@@ -11,15 +12,26 @@ Route::get('/', function () {
     return view('pengunjung.home_pengunjung');
 })->name('home');
 
+
+// // MIDDLEWARE LOGIN
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('pengunjung.dashboard');
+//     })->name('dashboard');
+// });
+
 // LOGIN
-Route::get('/login', function () {
-    return view('pengunjung.login');
-})->name('login');
+// Route::get('/login', function () {
+//     return view('pengunjung.login');
+// })->name('login');
+Route::post('/login', [UserController::class, 'login']);
 
 // REGISTER
-Route::get('/register', function () {
-    return view('pengunjung.register');
-})->name('register');
+// Route::get('/register', function () {
+//     return view('pengunjung.register');
+// })->name('register');
+
+Route::post('/register', [UserController::class, 'register']);
 
 // KATALOG
 Route::get('/katalog', function () {

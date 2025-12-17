@@ -37,7 +37,7 @@
                 <p class="text-gray-600 mt-1">Silakan login untuk melanjutkan</p>
 
                 <!-- FORM -->
-                <form class="mt-6 space-y-6">
+                <form class="mt-6 space-y-6" action="{{ url('/login') }}" method="POST">
 
                     <!-- EMAIL -->
                     <div>

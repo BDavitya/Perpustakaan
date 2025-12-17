@@ -27,7 +27,7 @@
 
             <!-- Desktop Nav -->
             <nav class="hidden md:flex items-center gap-6 text-sm text-gray-600">
-                <a href="{{ url('/home-pengunjung') }}" class="hover:text-green-600">Home</a>
+                <a href="{{ url('/') }}" class="hover:text-green-600">Home</a>
                 <a href="{{ url('/katalog') }}" class="hover:text-green-600">Katalog</a>
                 <a href="{{ url('/pengumuman') }}" class="hover:text-green-600">Pengumuman</a>
                 <a href="{{ url('/agenda') }}" class="hover:text-green-600">Agenda</a>
