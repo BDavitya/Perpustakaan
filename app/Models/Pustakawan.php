@@ -2,15 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Pustakawan extends Model
 {
-    use HasFactory;
-
     protected $table = 'pustakawan';
     protected $primaryKey = 'id_admin';
+
     public $timestamps = false;
 
     protected $fillable = [
@@ -19,7 +17,9 @@ class Pustakawan extends Model
         'nama_lengkap'
     ];
 
-    protected $hidden = [
-        'password',
-    ];
+    // Relasi: admin punya banyak konten
+    public function konten()
+    {
+        return $this->hasMany(Konten::class, 'id_admin');
+    }
 }
