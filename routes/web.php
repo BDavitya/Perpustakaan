@@ -41,6 +41,8 @@ Route::post('/regist', [UserController::class, 'register'])
 
 Route::get('/katalog', [BukuController::class, 'index'])
     ->name('katalog');
+Route::get('/buku/{id}', [BukuController::class, 'show'])
+    ->name('buku.show');
 
 // PENGUMUMAN
 Route::get('/pengumuman', function () {
@@ -61,8 +63,3 @@ Route::get('/contact', function () {
 Route::get('/agenda', function () {
     return view('pengunjung.agenda');
 })->name('agenda');
-
-// DETAIL BOOK (versi statis dulu)
-Route::get('/detail-book', function () {
-    return view('pengunjung.detail_book');
-})->name('detail.book');
