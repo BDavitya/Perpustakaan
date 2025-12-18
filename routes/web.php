@@ -44,10 +44,6 @@ Route::get('/katalog', [BukuController::class, 'index'])
 Route::get('/buku/{id}', [BukuController::class, 'show'])
     ->name('buku.show');
 
-// PENGUMUMAN
-Route::get('/pengumuman', function () {
-    return view('pengunjung.pengumuman');
-})->name('pengumuman');
 
 // FAQ
 Route::get('/faq', function () {
@@ -63,3 +59,10 @@ Route::get('/contact', function () {
 Route::get('/agenda', function () {
     return view('pengunjung.agenda');
 })->name('agenda');
+
+// DETAIL BOOK (versi statis dulu)
+Route::get('/detail-book', function () {
+    return view('pengunjung.detail_book');
+})->name('detail.book');
+
+Route::get('/pengumuman', [PengumumanController::class, 'index']);

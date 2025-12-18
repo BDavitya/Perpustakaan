@@ -9,7 +9,7 @@ class Konten extends Model
     protected $table = 'konten';
     protected $primaryKey = 'id_konten';
 
-    public $timestamps = false;
+    
 
     protected $fillable = [
         'id_admin',
