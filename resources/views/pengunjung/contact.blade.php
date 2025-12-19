@@ -50,15 +50,17 @@ document.getElementById("menuBtn").onclick = () => {
     <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <div class="bg-white rounded-2xl shadow-sm p-6 text-center">
-            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mb-3">📍</div>
-            <h4 class="font-semibold text-sm">Address</h4>
-            <p class="text-xs text-gray-500">
-                123 Library Street<br>Jakarta 12345<br>Indonesia
-            </p>
+        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mb-3 mx-auto">
+            📍
         </div>
+        <h4 class="font-semibold text-sm">Address</h4>
+        <p class="text-xs text-gray-500">
+            123 Library Street<br>Jakarta 12345<br>Indonesia
+        </p>
+    </div>
 
         <div class="bg-white rounded-2xl shadow-sm p-6 text-center">
-            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mb-3">📞</div>
+            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mb-3 mx-auto">📞</div>
             <h4 class="font-semibold text-sm">Phone</h4>
             <p class="text-xs text-gray-500">
                 +62 21 1234 5678<br>+62 812 3456 7890
@@ -66,7 +68,7 @@ document.getElementById("menuBtn").onclick = () => {
         </div>
 
         <div class="bg-white rounded-2xl shadow-sm p-6 text-center">
-            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mb-3">✉️</div>
+            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mb-3 mx-auto">✉️</div>
             <h4 class="font-semibold text-sm">Email</h4>
             <p class="text-xs text-gray-500">
                 info@library.com<br>support@library.com
@@ -74,7 +76,7 @@ document.getElementById("menuBtn").onclick = () => {
         </div>
 
         <div class="bg-white rounded-2xl shadow-sm p-6 text-center">
-            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mb-3">⏰</div>
+            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mb-3 mx-auto">⏰</div>
             <h4 class="font-semibold text-sm">Open Hours</h4>
             <p class="text-xs text-gray-500">
                 Mon–Fri: 8.00–20.00<br>
