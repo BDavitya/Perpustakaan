@@ -60,144 +60,74 @@
         <aside class="bg-white rounded-2xl shadow p-5 h-fit">
             <h3 class="font-semibold text-sm mb-3">Kategori Event</h3>
 
-            <ul class="space-y-3 text-sm text-gray-600">
-                <li><input type="radio" checked> Semua</li>
-                <li><input type="radio"> Diskusi Buku</li>
-                <li><input type="radio"> Workshop</li>
-                <li><input type="radio"> Pelatihan</li>
-                <li><input type="radio"> Pameran</li>
-                <li><input type="radio"> Anak</li>
-            </ul>
+           <ul class="space-y-3 text-sm text-gray-600">
+    <li>
+        <a href="{{ route('agenda') }}"
+           class="{{ empty($kategoriAktif) ? 'font-semibold text-green-600' : '' }}">
+            Semua
+        </a>
+    </li>
+
+    @foreach ($kategori as $kat)
+        <li>
+            <a href="{{ route('agenda', ['kategori' => $kat->id_kategori]) }}"
+               class="{{ ($kategoriAktif ?? null) == $kat->id_kategori ? 'font-semibold text-green-600' : '' }}">
+                {{ $kat->nama_kategori }}
+            </a>
+        </li>
+    @endforeach
+</ul>
+
         </aside>
 
+
         <!-- EVENT LIST -->
-        <div class="lg:col-span-3 space-y-10">
+        <div class="lg:col-span-3 space-y-5">
 
-            <!-- SECTION 1 -->
-            {{-- <h3 class="font-semibold text-gray-700 mb-3">Segera Dimulai</h3> --}}
-
-            <div class="space-y-5">
-
-                <!-- EVENT 1 -->
+            @forelse ($events as $event)
                 <div class="bg-white rounded-2xl shadow p-5 flex flex-col md:flex-row gap-5">
+
+                    <!-- TANGGAL -->
                     <div class="w-20 h-20 bg-green-100 rounded-xl flex flex-col items-center justify-center text-green-700 font-semibold">
-                        <span>25</span>
-                        <span class="text-xs">Nov</span>
+                        <span>{{ \Carbon\Carbon::parse($event->tanggal)->format('d') }}</span>
+                        <span class="text-xs">
+                            {{ \Carbon\Carbon::parse($event->tanggal)->translatedFormat('M') }}
+                        </span>
                     </div>
 
+                    <!-- DETAIL -->
                     <div class="flex-1">
-                        <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs rounded-full">Diskusi Buku</span>
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs rounded-full">
+                            {{ $event->kategori->nama_kategori }}
+                        </span>
 
-                        <h4 class="text-lg font-semibold mt-2">Diskusi Buku: "Thinking, Fast and Slow"</h4>
+                        <h4 class="text-lg font-semibold mt-2">
+                            {{ $event->judul }}
+                        </h4>
 
                         <div class="text-xs text-gray-500 space-y-1 mt-1">
-                            <p>🕒 14:00 - 16:00 · Ruang Diskusi Lt. 2</p>
-                            <p>👥 25 / 30 peserta</p>
+                            <p>
+                                🕒 {{ $event->waktu_mulai }} - {{ $event->waktu_selesai }}
+                                · {{ $event->lokasi }}
+                            </p>
+                            <p>
+                                👥 {{ $event->jumlah_peserta }} / {{ $event->kuota }} peserta
+                            </p>
                         </div>
 
                         <p class="text-sm text-gray-600 mt-3">
-                            Bedah buku karya Daniel Kahneman tentang psikologi pengambilan keputusan.
+                            {{ $event->deskripsi }}
                         </p>
                     </div>
                 </div>
-
-                {{-- <!-- EVENT 2 -->
-                <div class="bg-white rounded-2xl shadow p-5 flex flex-col md:flex-row gap-5">
-                    <div class="w-20 h-20 bg-green-100 rounded-xl flex flex-col items-center justify-center text-green-700 font-semibold">
-                        <span>26</span>
-                        <span class="text-xs">Nov</span>
-                    </div>
-
-                    <div class="flex-1">
-                        <span class="px-3 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">Workshop</span>
-                        <h4 class="text-lg font-semibold mt-2">Workshop: Penulisan Ilmiah</h4>
-
-                        <div class="text-xs text-gray-500 space-y-1 mt-1">
-                            <p>🕒 09:00 - 12:00 · Auditorium Utama</p>
-                            <p>👥 45 / 50 peserta</p>
-                        </div>
-
-                        <p class="text-sm text-gray-600 mt-3">
-                            Pelatihan teknik penulisan karya ilmiah untuk mahasiswa dan peneliti.
-                        </p>
-                    </div>
-                </div> --}}
-
-                <!-- EVENT 3 -->
-                {{-- <div class="bg-white rounded-2xl shadow p-5 flex flex-col md:flex-row gap-5">
-                    <div class="w-20 h-20 bg-green-100 rounded-xl flex flex-col items-center justify-center text-green-700 font-semibold">
-                        <span>27</span>
-                        <span class="text-xs">Nov</span>
-                    </div>
-
-                    <div class="flex-1">
-                        <span class="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">Anak</span>
-                        <h4 class="text-lg font-semibold mt-2">Storytelling untuk Anak</h4>
-
-                        <div class="text-xs text-gray-500 mt-1 space-y-1">
-                            <p>🕒 10:00 - 11:30 · Ruang Anak</p>
-                            <p>👥 12 / 20 peserta</p>
-                        </div>
-
-                        <p class="text-sm text-gray-600 mt-3">
-                            Sesi dongeng interaktif untuk anak usia 5–10 tahun.
-                        </p>
-                    </div>
-                </div> --}}
-
-            </div>
-
-            <!-- SECTION 2 -->
-            {{-- <h3 class="font-semibold text-gray-700 mt-10">Minggu Ini</h3>
-
-            <div class="space-y-5">
-                <div class="bg-white rounded-2xl shadow p-5 flex flex-col md:flex-row gap-5">
-                    <div class="w-20 h-20 bg-green-100 rounded-xl flex flex-col items-center justify-center text-green-700 font-semibold">
-                        <span>28</span>
-                        <span class="text-xs">Nov</span>
-                    </div>
-
-                    <div class="flex-1">
-                        <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">Pelatihan</span>
-                        <h4 class="text-lg font-semibold mt-2">Pelatihan Riset & Publikasi</h4>
-
-                        <p class="text-xs text-gray-500 mt-1">🕒 13:00 - 16:00 · Lab Komputer Lt. 3</p>
-                    </div>
+            @empty
+                <div class="bg-white rounded-xl p-6 text-center text-gray-500">
+                    Tidak ada agenda untuk kategori ini.
                 </div>
-
-                <div class="bg-white rounded-2xl shadow p-5 flex flex-col md:flex-row gap-5">
-                    <div class="w-20 h-20 bg-green-100 rounded-xl flex flex-col items-center justify-center text-green-700 font-semibold">
-                        <span>30</span>
-                        <span class="text-xs">Nov</span>
-                    </div>
-
-                    <div class="flex-1">
-                        <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs rounded-full">Pameran</span>
-                        <h4 class="text-lg font-semibold mt-2">Pameran Buku Baru</h4>
-
-                        <p class="text-xs text-gray-500 mt-1">🕒 08:00 - 17:00 · Lobby Utama</p>
-                    </div>
-                </div>
-            </div> --}}
-
-            <!-- SECTION 3 -->
-            {{-- <h3 class="font-semibold text-gray-700 mt-10">Bulan Depan</h3>
-
-            <div class="bg-white rounded-2xl shadow p-5 flex flex-col md:flex-row gap-5">
-                <div class="w-20 h-20 bg-green-100 rounded-xl flex flex-col items-center justify-center text-green-700 font-semibold">
-                    <span>02</span>
-                    <span class="text-xs">Des</span>
-                </div>
-
-                <div class="flex-1">
-                    <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs rounded-full">Diskusi Buku</span>
-                    <h4 class="text-lg font-semibold mt-2">Bedah Buku: Sastra Indonesia</h4>
-
-                    <p class="text-xs text-gray-500 mt-1">🕒 15:00 - 17:00 · Ruang Seminar</p>
-                </div>
-            </div> --}}
+            @endforelse
 
         </div>
+
     </div>
 </section>
 

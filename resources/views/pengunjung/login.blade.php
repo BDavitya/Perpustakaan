@@ -113,7 +113,7 @@
 
                 <div class="relative text-white p-10 flex flex-col justify-center h-full space-y-6">
 
-                    <a href="{{ url('/home-pengunjung') }}" class="absolute top-4 right-4 underline text-sm">
+                    <a href="{{ url('/') }}" class="absolute top-4 right-4 underline text-sm">
                         Kembali ke Home
                     </a>
 

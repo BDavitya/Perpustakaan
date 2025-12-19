@@ -44,9 +44,8 @@ class UserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return response()->json([
-            'message' => 'Logout berhasil'
-        ]);
+        return redirect('/login')->with('success', 'Logout berhasil');
+
     }
 
     public function showRegister(){
