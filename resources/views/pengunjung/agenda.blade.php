@@ -10,83 +10,7 @@
 <body class="bg-gray-50 text-gray-800">
 
 <!-- ================= HEADER ================= -->
-<header class="bg-white shadow-sm fixed inset-x-0 top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 lg:px-8 py-4 flex items-center justify-between">
-
-        <!-- Brand -->
-        <div class="flex items-center gap-2">
-            <img src="{{ asset('assets/img/logoperpus.png') }}" class="w-10 h-10 object-contain">
-            <div>
-                <h1 class="text-lg font-bold text-green-700 leading-tight">BookTech</h1>
-                <p class="text-xs text-gray-500 -mt-1">Perpustakaan Digital</p>
-            </div>
-        </div>
-
-        <!-- Right nav -->
-        <div class="flex items-center gap-8">
-            <nav class="hidden md:flex items-center gap-6 text-sm text-gray-600">
-                <a href="{{ url('/home-pengunjung') }}" class="hover:text-green-600">Home</a>
-                <a href="{{ url('/katalog') }}" class="hover:text-green-600">Katalog</a>
-                <a href="{{ url('/pengumuman') }}" class="hover:text-green-600">Pengumuman</a>
-                <a href="{{ url('/agenda') }}" class="hover:text-green-600">Agenda</a>
-
-                <div class="relative">
-                    <button id="dropdownBtn" class="flex items-center gap-1 hover:text-green-600">
-                        Lainnya
-                        <svg id="dropdownIcon" class="w-4 h-4 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-
-                    <div id="dropdownMenu"
-                         class="absolute right-0 mt-2 w-40 bg-white shadow-lg border rounded-lg py-2 text-sm hidden">
-                        <a href="{{ url('/register') }}" class="block px-4 py-2 hover:bg-gray-100">Pendaftaran</a>
-                        <a href="{{ url('/faq') }}" class="block px-4 py-2 hover:bg-gray-100">FAQ</a>
-                        <a href="{{ url('/contact') }}" class="block px-4 py-2 hover:bg-gray-100">Kontak</a>
-                    </div>
-                </div>
-            </nav>
-
-            <a href="{{ url('/login') }}"
-               class="hidden md:inline-block px-5 py-2 rounded-lg bg-green-600 text-white text-sm hover:bg-green-700">
-                Login
-            </a>
-
-            <button id="menuBtn" class="md:hidden text-gray-700 text-2xl">☰</button>
-        </div>
-    </div>
-
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="hidden bg-white border-t md:hidden">
-        <nav class="flex flex-col p-4 text-sm space-y-3">
-            <a href="{{ url('/home-pengunjung') }}">Home</a>
-            <a href="{{ url('/katalog') }}">Katalog</a>
-            <a href="{{ url('/pengumuman') }}">Pengumuman</a>
-            <a href="{{ url('/agenda') }}">Agenda</a>
-
-            <div class="border-t pt-3">
-                <button id="mobileDropdownBtn"
-                        class="flex justify-between w-full text-left py-2">
-                    Lainnya
-                    <svg id="mobileDropdownIcon" class="w-4 h-4 transition" fill="none" stroke="currentColor"
-                         viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M19 9l-7 7-7-7"/>
-                    </svg>
-                </button>
-
-                <div id="mobileDropdownMenu" class="hidden pl-4 space-y-2">
-                    <a href="{{ url('/register') }}" class="block py-1">Pendaftaran</a>
-                    <a href="{{ url('/faq') }}" class="block py-1">FAQ</a>
-                    <a href="{{ url('/contact') }}" class="block py-1">Kontak</a>
-                </div>
-            </div>
-
-            <a href="{{ url('/login') }}" class="text-green-700 font-semibold mt-2">Login</a>
-        </nav>
-    </div>
-</header>
+@include('pengunjung.navbar')
 
 <script>
     menuBtn.onclick = () => mobileMenu.classList.toggle("hidden");
@@ -278,48 +202,7 @@
 </section>
 
 <!-- ================= FOOTER ================= -->
-<footer class="bg-gray-900 text-gray-300 pt-10 pb-6">
-    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-6">
-
-        <div>
-            <h4 class="font-semibold text-sm">Perpustakaan Digital</h4>
-            <p class="text-xs text-gray-400 mt-3">Akses ribuan buku digital.</p>
-        </div>
-
-        <div>
-            <h4 class="font-semibold text-sm mb-3">Tautan Cepat</h4>
-            <ul class="space-y-2 text-xs">
-                <li><a href="{{ url('/home-pengunjung') }}" class="hover:text-white">Home</a></li>
-                <li><a href="{{ url('/agenda') }}" class="hover:text-white">Agenda</a></li>
-                <li><a href="{{ url('/pengumuman') }}" class="hover:text-white">Pengumuman</a></li>
-                <li><a href="{{ url('/register') }}" class="hover:text-white">Pendaftaran Anggota</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h4 class="font-semibold text-sm mb-3">Informasi</h4>
-            <ul class="space-y-2 text-xs">
-                <li><a href="{{ url('/faq') }}" class="hover:text-white">FAQ</a></li>
-                <li><a href="#" class="hover:text-white">Kebijakan Privasi</a></li>
-                <li><a href="#" class="hover:text-white">Syarat & Ketentuan</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h4 class="font-semibold text-sm mb-3">Kontak</h4>
-            <p class="text-xs text-gray-400">
-                Jl. Pendidikan No. 123<br>
-                Jakarta Selatan, 12345
-            </p>
-            <p class="text-xs text-gray-400 mt-2">info@perpustakaan.id</p>
-        </div>
-
-    </div>
-
-    <div class="border-t border-gray-800 pt-4 text-xs text-gray-500 text-center">
-        © 2024 Perpustakaan Digital. All rights reserved.
-    </div>
-</footer>
+@include('pengunjung.footer')
 
 </body>
 </html>
