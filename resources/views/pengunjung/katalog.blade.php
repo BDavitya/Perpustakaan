@@ -207,26 +207,36 @@
 
 <script>
 // Sample book data (replace with actual data from backend)
-// const allBooks = [
-//     { id: 1, judul: 'Atomic Habits', penulis: 'James Clear', tahun: 2018, penerbit: 'Penguin', kategori: 'pengembangan', status: 'Tersedia', isbn: '978-0735211292' },
-//     { id: 2, judul: 'Sapiens', penulis: 'Yuval Noah Harari', tahun: 2014, penerbit: 'Harper', kategori: 'sejarah', status: 'Tersedia', isbn: '978-0062316097' },
-//     { id: 3, judul: 'Rich Dad Poor Dad', penulis: 'Robert Kiyosaki', tahun: 1997, penerbit: 'Warner Books', kategori: 'keuangan', status: 'Dipinjam', isbn: '978-1612680194' },
-//     { id: 4, judul: 'The Psychology of Money', penulis: 'Morgan Housel', tahun: 2020, penerbit: 'Harriman', kategori: 'keuangan', status: 'Tersedia', isbn: '978-0857197689' },
-//     { id: 5, judul: 'Deep Work', penulis: 'Cal Newport', tahun: 2016, penerbit: 'Grand Central', kategori: 'produktivitas', status: 'Tersedia', isbn: '978-1455586691' },
-//     { id: 6, judul: 'Thinking Fast and Slow', penulis: 'Daniel Kahneman', tahun: 2011, penerbit: 'Farrar', kategori: 'psikologi', status: 'Tersedia', isbn: '978-0374533557' },
-//     { id: 7, judul: 'Harry Potter', penulis: 'J.K. Rowling', tahun: 1997, penerbit: 'Bloomsbury', kategori: 'fiksi', status: 'Tersedia', isbn: '978-0439708180' },
-//     { id: 8, judul: 'The Alchemist', penulis: 'Paulo Coelho', tahun: 1988, penerbit: 'HarperCollins', kategori: 'fiksi', status: 'Dipinjam', isbn: '978-0062315007' },
-//     { id: 9, judul: 'Essentialism', penulis: 'Greg McKeown', tahun: 2014, penerbit: 'Crown', kategori: 'produktivitas', status: 'Tersedia', isbn: '978-0804137386' },
-//     { id: 10, judul: 'Man Search for Meaning', penulis: 'Viktor Frankl', tahun: 1946, penerbit: 'Beacon Press', kategori: 'psikologi', status: 'Tersedia', isbn: '978-0807014271' },
-//     { id: 11, judul: 'The Intelligent Investor', penulis: 'Benjamin Graham', tahun: 1949, penerbit: 'Harper Business', kategori: 'keuangan', status: 'Tersedia', isbn: '978-0060555665' },
-//     { id: 12, judul: 'Homo Deus', penulis: 'Yuval Noah Harari', tahun: 2015, penerbit: 'Harper', kategori: 'sejarah', status: 'Tersedia', isbn: '978-0062464347' }
-// ];
+const allBooks = [
+    { id: 1, judul: 'Atomic Habits', penulis: 'James Clear', tahun: 2018, penerbit: 'Penguin', kategori: 'pengembangan', status: 'Tersedia', isbn: '978-0735211292' },
+    { id: 2, judul: 'Sapiens', penulis: 'Yuval Noah Harari', tahun: 2014, penerbit: 'Harper', kategori: 'sejarah', status: 'Tersedia', isbn: '978-0062316097' },
+    { id: 3, judul: 'Rich Dad Poor Dad', penulis: 'Robert Kiyosaki', tahun: 1997, penerbit: 'Warner Books', kategori: 'keuangan', status: 'Dipinjam', isbn: '978-1612680194' },
+    { id: 4, judul: 'The Psychology of Money', penulis: 'Morgan Housel', tahun: 2020, penerbit: 'Harriman', kategori: 'keuangan', status: 'Tersedia', isbn: '978-0857197689' },
+    { id: 5, judul: 'Deep Work', penulis: 'Cal Newport', tahun: 2016, penerbit: 'Grand Central', kategori: 'produktivitas', status: 'Tersedia', isbn: '978-1455586691' },
+    { id: 6, judul: 'Thinking Fast and Slow', penulis: 'Daniel Kahneman', tahun: 2011, penerbit: 'Farrar', kategori: 'psikologi', status: 'Tersedia', isbn: '978-0374533557' },
+    { id: 7, judul: 'Harry Potter', penulis: 'J.K. Rowling', tahun: 1997, penerbit: 'Bloomsbury', kategori: 'fiksi', status: 'Tersedia', isbn: '978-0439708180' },
+    { id: 8, judul: 'The Alchemist', penulis: 'Paulo Coelho', tahun: 1988, penerbit: 'HarperCollins', kategori: 'fiksi', status: 'Dipinjam', isbn: '978-0062315007' },
+    { id: 9, judul: 'Essentialism', penulis: 'Greg McKeown', tahun: 2014, penerbit: 'Crown', kategori: 'produktivitas', status: 'Tersedia', isbn: '978-0804137386' },
+    { id: 10, judul: 'Man Search for Meaning', penulis: 'Viktor Frankl', tahun: 1946, penerbit: 'Beacon Press', kategori: 'psikologi', status: 'Tersedia', isbn: '978-0807014271' },
+    { id: 11, judul: 'The Intelligent Investor', penulis: 'Benjamin Graham', tahun: 1949, penerbit: 'Harper Business', kategori: 'keuangan', status: 'Tersedia', isbn: '978-0060555665' },
+    { id: 12, judul: 'Homo Deus', penulis: 'Yuval Noah Harari', tahun: 2015, penerbit: 'Harper', kategori: 'sejarah', status: 'Tersedia', isbn: '978-0062464347' },
+    { id: 13, judul: '1984', penulis: 'George Orwell', tahun: 1949, penerbit: 'Secker & Warburg', kategori: 'fiksi', status: 'Tersedia', isbn: '978-0451524935' },
+    { id: 14, judul: 'The Power of Habit', penulis: 'Charles Duhigg', tahun: 2012, penerbit: 'Random House', kategori: 'pengembangan', status: 'Tersedia', isbn: '978-0812981605' },
+    { id: 15, judul: 'Think and Grow Rich', penulis: 'Napoleon Hill', tahun: 1937, penerbit: 'Ralston Society', kategori: 'keuangan', status: 'Dipinjam', isbn: '978-1585424337' },
+    { id: 16, judul: 'The 7 Habits', penulis: 'Stephen Covey', tahun: 1989, penerbit: 'Simon & Schuster', kategori: 'produktivitas', status: 'Tersedia', isbn: '978-0743269513' },
+    { id: 17, judul: 'Influence', penulis: 'Robert Cialdini', tahun: 1984, penerbit: 'Harper Business', kategori: 'psikologi', status: 'Tersedia', isbn: '978-0061241895' },
+    { id: 18, judul: 'The Hobbit', penulis: 'J.R.R. Tolkien', tahun: 1937, penerbit: 'Allen & Unwin', kategori: 'fiksi', status: 'Tersedia', isbn: '978-0547928227' },
+    { id: 19, judul: 'A Brief History of Time', penulis: 'Stephen Hawking', tahun: 1988, penerbit: 'Bantam', kategori: 'sejarah', status: 'Dipinjam', isbn: '978-0553380163' },
+    { id: 20, judul: 'The Lean Startup', penulis: 'Eric Ries', tahun: 2011, penerbit: 'Crown Business', kategori: 'produktivitas', status: 'Tersedia', isbn: '978-0307887894' }
+];
 
-const allBooks = @json($buku);
+// const allBooks = @json($buku);
 
 let currentBooks = [...allBooks];
 let currentCategory = 'all';
 let searchQuery = '';
+let currentPage = 1;
+const booksPerPage = 8;
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -244,13 +254,20 @@ function renderBooks(books) {
     if (books.length === 0) {
         grid.classList.add('hidden');
         noResults.classList.remove('hidden');
+        document.getElementById('pagination').classList.add('hidden');
         return;
     }
     
     grid.classList.remove('hidden');
     noResults.classList.add('hidden');
     
-    grid.innerHTML = books.map(book => `
+    // Calculate pagination
+    const totalPages = Math.ceil(books.length / booksPerPage);
+    const startIndex = (currentPage - 1) * booksPerPage;
+    const endIndex = startIndex + booksPerPage;
+    const paginatedBooks = books.slice(startIndex, endIndex);
+    
+    grid.innerHTML = paginatedBooks.map(book => `
         <a href="#" class="bg-white rounded-xl shadow hover:shadow-md transition p-3 flex flex-col">
             <div class="rounded-xl overflow-hidden bg-gradient-to-br from-green-400 to-green-600">
                 <div class="w-full h-40 flex items-center justify-center text-white font-bold text-2xl">
@@ -272,6 +289,8 @@ function renderBooks(books) {
             </span>
         </a>
     `).join('');
+    
+    renderPagination(totalPages);
 }
 
 function filterBooks() {
@@ -293,7 +312,93 @@ function filterBooks() {
     }
     
     currentBooks = filtered;
+    currentPage = 1; // Reset to first page
     renderBooks(currentBooks);
+}
+
+function renderPagination(totalPages) {
+    const pagination = document.getElementById('pagination');
+    
+    if (totalPages <= 1) {
+        pagination.classList.add('hidden');
+        return;
+    }
+    
+    pagination.classList.remove('hidden');
+    
+    let pages = '';
+    
+    // Previous button
+    pages += `
+        <button onclick="changePage(${currentPage - 1})" 
+                ${currentPage === 1 ? 'disabled class="w-8 h-8 rounded-lg border bg-gray-100 text-gray-400 text-sm cursor-not-allowed"' : 'class="w-8 h-8 rounded-lg border bg-white hover:bg-gray-100 text-sm"'}>
+            ‹
+        </button>
+    `;
+    
+    // Page numbers
+    const maxVisible = 5;
+    let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
+    let endPage = Math.min(totalPages, startPage + maxVisible - 1);
+    
+    if (endPage - startPage < maxVisible - 1) {
+        startPage = Math.max(1, endPage - maxVisible + 1);
+    }
+    
+    // First page
+    if (startPage > 1) {
+        pages += `
+            <button onclick="changePage(1)" class="w-8 h-8 rounded-lg border bg-white hover:bg-gray-100 text-sm">
+                1
+            </button>
+        `;
+        if (startPage > 2) {
+            pages += `<span class="px-2 text-gray-500">...</span>`;
+        }
+    }
+    
+    // Page range
+    for (let i = startPage; i <= endPage; i++) {
+        pages += `
+            <button onclick="changePage(${i})" 
+                    class="w-8 h-8 rounded-lg ${i === currentPage ? 'bg-green-600 text-white' : 'border bg-white hover:bg-gray-100'} text-sm">
+                ${i}
+            </button>
+        `;
+    }
+    
+    // Last page
+    if (endPage < totalPages) {
+        if (endPage < totalPages - 1) {
+            pages += `<span class="px-2 text-gray-500">...</span>`;
+        }
+        pages += `
+            <button onclick="changePage(${totalPages})" class="w-8 h-8 rounded-lg border bg-white hover:bg-gray-100 text-sm">
+                ${totalPages}
+            </button>
+        `;
+    }
+    
+    // Next button
+    pages += `
+        <button onclick="changePage(${currentPage + 1})" 
+                ${currentPage === totalPages ? 'disabled class="w-8 h-8 rounded-lg border bg-gray-100 text-gray-400 text-sm cursor-not-allowed"' : 'class="w-8 h-8 rounded-lg border bg-white hover:bg-gray-100 text-sm"'}>
+            ›
+        </button>
+    `;
+    
+    pagination.innerHTML = pages;
+}
+
+function changePage(page) {
+    const totalPages = Math.ceil(currentBooks.length / booksPerPage);
+    if (page < 1 || page > totalPages) return;
+    
+    currentPage = page;
+    renderBooks(currentBooks);
+    
+    // Scroll to top of book list
+    document.querySelector('section.pb-14').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function setupEventListeners() {
