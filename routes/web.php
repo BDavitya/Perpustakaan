@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PengumumanController;
 
 // ==========================
@@ -10,9 +11,12 @@ use App\Http\Controllers\PengumumanController;
 // ==========================
 
 // HOME PENGUNJUNG
-Route::get('/', function () {
-    return view('pengunjung.home_pengunjung');
-})->name('home');
+// Route::get('/', function () {
+//     return view('pengunjung.home_pengunjung');
+// })->name('home');
+
+Route::get('/', [HomeController::class, 'index']);
+
 
 
 // // MIDDLEWARE LOGIN
