@@ -1,12 +1,20 @@
-@extends('layouts.pengunjung')
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengumuman - Perpustakaan Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-@section('title', 'Pembukaan Gedung Baru - BookTech')
+<body class="bg-gray-50 text-gray-800">
 
-@section('content')
+<!-- ================= HEADER ================= -->
+@include('pengunjung.navbar')
 
     <!-- ================= BACK ================= -->
     <div class="max-w-7xl mx-auto px-4 lg:px-8 py-4 lg:py-6 border-b">
-        <a href="{{ route('pengunjung.pengumuman') }}"
+        <a href="#"
             class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-green-600">
             ← Kembali ke Pengumuman
         </a>
@@ -89,7 +97,7 @@
                 </p>
 
                 <div class="space-y-3">
-                    <a href="{{ route('pengunjung.detail_pengumuman') }}"
+                    <a href="#"
                         class="block p-4 rounded-xl border hover:bg-gray-50 transition">
                         <h4 class="text-sm font-semibold text-gray-800">
                             Program Membaca Liburan 2025
@@ -99,7 +107,7 @@
                         </span>
                     </a>
 
-                    <a href="{{ route('pengunjung.detail_pengumuman') }}"
+                    <a href="#"
                         class="block p-4 rounded-xl border hover:bg-gray-50 transition">
                         <h4 class="text-sm font-semibold text-gray-800">
                             Koleksi Digital Diperluas
@@ -109,7 +117,7 @@
                         </span>
                     </a>
 
-                    <a href="{{ route('pengunjung.detail_pengumuman') }}"
+                    <a href="#"
                         class="block p-4 rounded-xl border hover:bg-gray-50 transition">
                         <h4 class="text-sm font-semibold text-gray-800">
                             Jam Kunjungan Diperpanjang
@@ -124,4 +132,8 @@
         </div>
     </section>
 
-@endsection
+<!-- ================= FOOTER ================= -->
+@include('pengunjung.footer')
+
+</body>
+</html>

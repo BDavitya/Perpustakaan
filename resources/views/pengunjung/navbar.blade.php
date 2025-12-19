@@ -17,9 +17,9 @@
 
             <!-- Desktop Nav -->
             <nav class="hidden md:flex items-center gap-6 text-sm text-gray-600">
-                <a href="{{ url('/') }}" class="hover:text-green-600">Home</a>
-                <a href="{{ url('/katalog') }}" class="hover:text-green-600">Katalog</a>
-                <a href="{{ url('/pengumuman') }}" class="hover:text-green-600">Pengumuman</a>
+                <a href="{{ route('home') }}" class="hover:text-green-600">Home</a>
+                <a href="{{ route('katalog') }}" class="hover:text-green-600">Katalog</a>
+                <a href="{{ route('pengumuman') }}" class="hover:text-green-600">Pengumuman</a>
                 <a href="{{ route('agenda') }}" class="hover:text-green-600">Agenda</a>
 
                 <!-- Dropdown -->
@@ -36,9 +36,9 @@
 
                     <div id="dropdownMenu"
                         class="absolute right-0 mt-2 w-40 bg-white shadow-lg border rounded-lg py-2 text-sm hidden z-50">
-                        <a href="{{ url('/register') }}" class="block px-4 py-2 hover:bg-gray-100">Pendaftaran</a>
-                        <a href="{{ url('/faq') }}" class="block px-4 py-2 hover:bg-gray-100">FAQ</a>
-                        <a href="{{ url('/contact') }}" class="block px-4 py-2 hover:bg-gray-100">Kontak</a>
+                        <a href="{{ route('register.show') }}" class="block px-4 py-2 hover:bg-gray-100">Pendaftaran</a>
+                        <a href="{{ route('faq') }}" class="block px-4 py-2 hover:bg-gray-100">FAQ</a>
+                        <a href="{{ route('contact') }}" class="block px-4 py-2 hover:bg-gray-100">Kontak</a>
                     </div>
                 </div>
             </nav>

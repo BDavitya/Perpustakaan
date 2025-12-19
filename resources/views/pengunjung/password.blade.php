@@ -37,7 +37,7 @@
         <div class="absolute inset-0 bg-greens-600/90"></div>
 
         <div class="relative z-10 space-y-4">
-            <a href="{{ route('pengunjung.home') }}" class="text-sm underline block text-right">
+            <a href="{{ route('home') }}" class="text-sm underline block text-right">
                 Masuk ke Home
             </a>
 
@@ -101,7 +101,7 @@
                             <input type="checkbox">
                             <span>Ingat saya</span>
                         </label>
-                        <a href="{{ route('pengunjung.password') }}" class="text-green-700 hover:underline">
+                        <a href="{{ route('password') }}" class="text-green-700 hover:underline">
                             Lupa password?
                         </a>
                     </div>
@@ -113,7 +113,7 @@
 
                     <p class="text-center text-sm">
                         Belum punya akun?
-                        <a href="{{ route('pengunjung.register') }}"
+                        <a href="{{ route('register.show') }}"
                             class="text-green-700 font-semibold hover:underline">
                             Daftar Sekarang
                         </a>
@@ -130,7 +130,7 @@
 
 
                 <div class="relative text-white p-10 flex flex-col justify-center space-y-6">
-                    <a href="{{ route('pengunjung.home') }}" class="absolute top-4 right-4 underline text-sm">
+                    <a href="{{ route('home') }}" class="absolute top-4 right-4 underline text-sm">
                         Masuk ke Home
                     </a>
 

@@ -17,23 +17,23 @@
             <!-- Desktop Nav -->
             <nav class="hidden md:flex items-center gap-6 text-sm">
 
-                <a href="{{ route('pengunjung.home') }}"
-                    class="{{ request()->routeIs('pengunjung.home') ? 'text-green-600 font-semibold' : 'text-gray-600' }}">
+                <a href="{{ route('home') }}"
+                    class="{{ request()->routeIs('home') ? 'text-green-600 font-semibold' : 'text-gray-600' }}">
                     Home
                 </a>
 
-                <a href="{{ route('pengunjung.katalog') }}"
-                    class="{{ request()->routeIs('pengunjung.katalog') ? 'text-green-600 font-semibold' : 'text-gray-600' }}">
+                <a href="{{ route('katalog') }}"
+                    class="{{ request()->routeIs('katalog') ? 'text-green-600 font-semibold' : 'text-gray-600' }}">
                     Katalog
                 </a>
 
-                <a href="{{ route('pengunjung.pengumuman') }}"
-                    class="{{ request()->routeIs('pengunjung.pengumuman') ? 'text-green-600 font-semibold' : 'text-gray-600' }}">
+                <a href="{{ route('pengumuman') }}"
+                    class="{{ request()->routeIs('pengumuman') ? 'text-green-600 font-semibold' : 'text-gray-600' }}">
                     Pengumuman
                 </a>
 
-                <a href="{{ route('pengunjung.agenda') }}"
-                    class="{{ request()->routeIs('pengunjung.agenda') ? 'text-green-600 font-semibold' : 'text-gray-600' }}">
+                <a href="{{ route('agenda') }}"
+                    class="{{ request()->routeIs('agenda') ? 'text-green-600 font-semibold' : 'text-gray-600' }}">
                     Agenda
                 </a>
 
@@ -48,12 +48,12 @@
 
                     <div id="dropdownMenu"
                         class="hidden absolute right-0 mt-2 w-40 bg-white border rounded-lg shadow-md text-sm">
-                        <a href="{{ route('pengunjung.register') }}"
-                            class="block px-4 py-2 {{ request()->routeIs('pengunjung.register') ? 'text-green-600 font-semibold' : 'text-gray-600' }} hover:bg-gray-100">
+                        <a href="{{ route('register.show') }}"
+                            class="block px-4 py-2 {{ request()->routeIs('register.show') ? 'text-green-600 font-semibold' : 'text-gray-600' }} hover:bg-gray-100">
                             Pendaftaran
                         </a>
-                        <a href="{{ route('pengunjung.faq') }}"
-                            class="block px-4 py-2 {{ request()->routeIs('pengunjung.faq') ? 'text-green-600 font-semibold' : 'text-gray-600' }} hover:bg-gray-100">
+                        <a href="{{ route('faq') }}"
+                            class="block px-4 py-2 {{ request()->routeIs('faq') ? 'text-green-600 font-semibold' : 'text-gray-600' }} hover:bg-gray-100">
                             FAQ
                         </a>
                     </div>
@@ -61,7 +61,7 @@
             </nav>
 
             <!-- Login Desktop -->
-            <a href="{{ url('/login') }}"
+            <a href="{{ route('login.show') }}"
                 class="hidden md:inline-block px-5 py-2 rounded-lg bg-greens-600 text-white text-sm font-semibold">
                 Login
             </a>
@@ -88,8 +88,8 @@
     <!-- Content -->
     <nav class="flex flex-col px-4 py-4 space-y-1 text-sm">
         <!-- Dashboard -->
-        <a href="{{ route('pengunjung.home') }}"
-            class="flex items-center gap-3 p-3 rounded-lg {{ request()->routeIs('pengunjung.home') ? 'bg-green-50 text-green-700 font-semibold' : 'text-gray-700 hover:bg-gray-100' }}">
+        <a href="{{ route('home') }}"
+            class="flex items-center gap-3 p-3 rounded-lg {{ request()->routeIs('home') ? 'bg-green-50 text-green-700 font-semibold' : 'text-gray-700 hover:bg-gray-100' }}">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M3 12l9-9 9 9M4 10v10h6v-6h4v6h6V10" />
@@ -97,8 +97,8 @@
             Home
         </a>
         <!-- Katalog -->
-        <a href="{{ route('pengunjung.katalog') }}"
-            class="flex items-center gap-3 p-3 rounded-lg {{ request()->routeIs('pengunjung.katalog') ? 'bg-green-50 text-green-700 font-semibold' : 'text-gray-700 hover:bg-gray-100' }}">
+        <a href="{{ route('katalog') }}"
+            class="flex items-center gap-3 p-3 rounded-lg {{ request()->routeIs('katalog') ? 'bg-green-50 text-green-700 font-semibold' : 'text-gray-700 hover:bg-gray-100' }}">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M12 6l-2-2H4a2 2 0 00-2 2v14l4-2 4 2 4-2 4 2V6a2 2 0 00-2-2h-6z" />
@@ -106,8 +106,8 @@
             Katalog
         </a>
         <!-- Pengumuman -->
-        <a href="{{ route('pengunjung.pengumuman') }}"
-            class="flex items-center gap-3 p-3 rounded-lg {{ request()->routeIs('pengunjung.pengumuman') ? 'bg-green-50 text-green-700 font-semibold' : 'text-gray-700 hover:bg-gray-100' }}">
+        <a href="{{ route('pengumuman') }}"
+            class="flex items-center gap-3 p-3 rounded-lg {{ request()->routeIs('pengumuman') ? 'bg-green-50 text-green-700 font-semibold' : 'text-gray-700 hover:bg-gray-100' }}">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11 a6.002 6.002 0 00-4-5.659V4a2 2 0 10-4 0v1.341 C7.67 6.165 6 8.388 6 11v3.159 c0 .538-.214 1.055-.595 1.436L4 17h5" />
@@ -115,8 +115,8 @@
             Pengumuman
         </a>
         <!-- Agenda -->
-        <a href="{{ route('pengunjung.agenda') }}"
-            class="flex items-center gap-3 p-3 rounded-lg {{ request()->routeIs('pengunjung.agenda') ? 'bg-green-50 text-green-700 font-semibold' : 'text-gray-700 hover:bg-gray-100' }}">
+        <a href="{{ route('agenda') }}"
+            class="flex items-center gap-3 p-3 rounded-lg {{ request()->routeIs('agenda') ? 'bg-green-50 text-green-700 font-semibold' : 'text-gray-700 hover:bg-gray-100' }}">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M8 7V3m8 4V3M5 11h14M5 19h14 a2 2 0 002-2V7a2 2 0 00-2-2H5 a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -125,9 +125,9 @@
         </a>
         @php
             $mobileLainnyaActive = request()->routeIs(
-                'pengunjung.register',
-                'pengunjung.faq',
-                'pengunjung.contact'
+                'register.show',
+                'faq',
+                'contact'
             );
         @endphp
         <!-- Lainnya -->
@@ -147,12 +147,12 @@
                 </svg>
             </button>
             <div id="mobileDropdownMenu" class="ml-11 mt-2 space-y-2 {{ $mobileLainnyaActive ? '' : 'hidden' }}">
-                <a href="{{ route('pengunjung.register') }}"
-                    class="block px-4 py-2 rounded-lg text-sm {{ request()->routeIs('pengunjung.register') ? 'bg-green-100 text-green-700 font-semibold' : 'bg-gray-50 text-gray-700 hover:bg-gray-100' }}">
+                <a href="{{ route('register.show') }}"
+                    class="block px-4 py-2 rounded-lg text-sm {{ request()->routeIs('register.show') ? 'bg-green-100 text-green-700 font-semibold' : 'bg-gray-50 text-gray-700 hover:bg-gray-100' }}">
                     Pendaftaran
                 </a>
-                <a href="{{ route('pengunjung.faq') }}"
-                    class="block px-4 py-2 rounded-lg text-sm {{ request()->routeIs('pengunjung.faq') ? 'bg-green-100 text-green-700 font-semibold' : 'bg-gray-50 text-gray-700 hover:bg-gray-100' }}">
+                <a href="{{ route('faq') }}"
+                    class="block px-4 py-2 rounded-lg text-sm {{ request()->routeIs('faq') ? 'bg-green-100 text-green-700 font-semibold' : 'bg-gray-50 text-gray-700 hover:bg-gray-100' }}">
                     FAQ
                 </a>
             </div>
@@ -160,7 +160,7 @@
         <!-- GARIS PEMBATAS -->
         <hr class="my-4">
         <!-- Login -->
-        <a href="{{ route('pengunjung.login') }}"
+        <a href="{{ route('login.show') }}"
             class="block w-full text-center py-3 bg-green-700 text-white rounded-xl font-semibold">
             Login
         </a>

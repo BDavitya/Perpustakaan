@@ -8,9 +8,8 @@ use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\AgendaController;
 use App\Models\User;
 
-Route::name('pengunjung.')->group(function () {
+// Route::name('pengunjung.')->group(function () {
 
-<<<<<<< Updated upstream
 // HOME PENGUNJUNG
 // Route::get('/', function () {
 //     return view('pengunjung.home_pengunjung');
@@ -56,47 +55,45 @@ Route::get('/agenda', [AgendaController::class, 'index'])
 ->name('agenda');
 
 // FAQ
-Route::get('/faq', function () {
-    return view('pengunjung.faq');
-})->name('faq');
+// Route::get('/faq', function () {
+//     return view('pengunjung.faq');
+// })->name('faq');
 
-// CONTACT
-Route::get('/contact', function () {
-    return view('pengunjung.contact');
-})->name('contact');
+// // CONTACT
+// Route::get('/contact', function () {
+//     return view('pengunjung.contact');
+// })->name('contact');
 
-// AGENDA
-Route::get('/agenda', function () {
-    return view('pengunjung.agenda');
-})->name('agenda');
+// // AGENDA
+// Route::get('/agenda', function () {
+//     return view('pengunjung.agenda');
+// })->name('agenda');
 
-// DETAIL BOOK (versi statis dulu)
-Route::get('/detail-book', function () {
-    return view('pengunjung.detail_book');
-})->name('detail.book');
+// // DETAIL BOOK (versi statis dulu)
+// Route::get('/detail-book', function () {
+//     return view('pengunjung.detail_book');
+// })->name('detail.book');
 
-Route::get('/pengumuman', [PengumumanController::class, 'index']);
-=======
+Route::get('/pengumuman', [PengumumanController::class, 'index'])->name('pengumuman');
     // HOME
-    Route::view('/', 'pengunjung.home_pengunjung')->name('home');
+    // Route::view('/', 'pengunjung.home_pengunjung')->name('home');
 
-    // AUTH
-    Route::view('/login', 'pengunjung.login')->name('login');
+    // // AUTH
+    // Route::view('/login', 'pengunjung.login')->name('login');
     Route::view('/password', 'pengunjung.password')->name('password');
-    Route::view('/register', 'pengunjung.register')->name('register');
+    // Route::view('/register', 'pengunjung.register')->name('register');
 
     // MENU UTAMA
-    Route::view('/katalog', 'pengunjung.katalog')->name('katalog');
-    Route::view('/pengumuman', 'pengunjung.pengumuman')->name('pengumuman');
-    Route::view('/agenda', 'pengunjung.agenda')->name('agenda');
+    // Route::view('/katalog', 'pengunjung.katalog')->name('katalog');
+    // Route::view('/pengumuman', 'pengunjung.pengumuman')->name('pengumuman');
+    // Route::view('/agenda', 'pengunjung.agenda')->name('agenda');
 
-    // INFORMASI
+    // // INFORMASI
     Route::view('/faq', 'pengunjung.faq')->name('faq');
     Route::view('/contact', 'pengunjung.contact')->name('contact');
 
-    // DETAIL
-    Route::view('/detail-book', 'pengunjung.detail_book')->name('detail_book');
+    // // DETAIL
+    // Route::view('/detail-book', 'pengunjung.detail_book')->name('detail_book');
     Route::view('/detail-pengumuman', 'pengunjung.detail_pengumuman')->name('detail_pengumuman');
 
-});
->>>>>>> Stashed changes
+// });
