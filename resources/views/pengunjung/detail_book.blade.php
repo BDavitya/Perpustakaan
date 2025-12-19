@@ -10,30 +10,7 @@
 <body class="bg-gray-50 text-gray-800">
 
 <!-- ================= HEADER ================= -->
-<header class="bg-white shadow-sm fixed inset-x-0 top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 lg:px-8 py-4 flex items-center justify-between">
-
-        <div class="flex items-center gap-2">
-            <img src="{{ asset('assets/img/logoperpus.png') }}" class="w-10 h-10 object-contain">
-            <div>
-                <h1 class="text-lg font-bold text-green-700 leading-tight">BookTech</h1>
-                <p class="text-xs text-gray-500 -mt-1">Perpustakaan Digital</p>
-            </div>
-        </div>
-
-        <nav class="hidden md:flex items-center gap-6 text-sm text-gray-600">
-            <a href="{{ route('home') }}" class="hover:text-green-600">Home</a>
-            <a href="{{ route('katalog') }}" class="hover:text-green-600">Katalog</a>
-            <a href="#" class="hover:text-green-600">Pengumuman</a>
-            <a href="#" class="hover:text-green-600">Agenda</a>
-            <a href="{{ route('login.show') }}"
-               class="px-5 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
-                Login
-            </a>
-        </nav>
-
-    </div>
-</header>
+@include('pengunjung.navbar')
 
 <div class="h-20"></div>
 
@@ -123,11 +100,7 @@
 </section> --}}
 
 <!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-300 pt-10 pb-6 mt-10">
-    <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-500">
-        © 2024 BookTech. All rights reserved.
-    </div>
-</footer>
+@include('pengunjung.footer')
 
 </body>
 </html>
