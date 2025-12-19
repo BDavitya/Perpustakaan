@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda - BookTech</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+@extends('layouts.pengunjung')
 
-<body class="bg-gray-50 text-gray-800">
+@section('title', 'Agenda - BookTech')
 
+<<<<<<< Updated upstream
 <!-- ================= HEADER ================= -->
 @include('pengunjung.navbar')
 
@@ -131,8 +125,12 @@
     </div>
 </section>
 
+<<<<<<< Updated upstream
 <!-- ================= FOOTER ================= -->
 @include('pengunjung.footer')
 
 </body>
 </html>
+=======
+@endsection
+>>>>>>> Stashed changes

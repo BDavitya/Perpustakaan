@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AgendaKategoriSeeder::class,
             AgendaEventSeeder::class,
+            BukuSeeder::class,
         ]);
     }
 

@@ -42,24 +42,12 @@
             </a>
 
             <h2 class="text-2xl font-bold leading-snug">
-                Akses Ribuan Koleksi Buku Digital
+                Buat Password Baru
             </h2>
 
             <p class="text-sm text-white/90">
-                Login untuk meminjam buku, melihat riwayat peminjaman,
-                dan mengakses fitur perpustakaan digital kami.
+                Masukkan password baru untuk akun ahmad@email.com
             </p>
-
-            <div class="space-y-3 pt-4">
-                <div>
-                    <p class="font-semibold">12,500+ Koleksi Buku</p>
-                    <p class="text-sm text-white/80">Berbagai kategori tersedia</p>
-                </div>
-                <div>
-                    <p class="font-semibold">Peminjaman Mudah</p>
-                    <p class="text-sm text-white/80">Proses cepat dan praktis</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -85,23 +73,19 @@
                 <h2 class="text-xl font-bold">Selamat Datang Kembali</h2>
                 <p class="text-gray-600 text-sm mt-1">Silakan login untuk melanjutkan</p>
 
-                <!-- FORM -->
-                <form class="mt-6 space-y-6" action="{{ route('login.store') }}" method="POST">
-                    @csrf
-                    <!-- EMAIL -->
+                <form class="mt-6 space-y-5">
+
                     <div>
-                        <label class="font-medium">Email</label>
-                        <div class="relative mt-1">
-                            <input type="email" name="email"
-                                class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
-                                placeholder="Masukkan email">
-                        </div>
+                        <label class="text-sm font-medium">Email</label>
+                        <input type="email"
+                            class="mt-1 w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
+                            placeholder="nama@email.com">
                     </div>
 
                     <div>
                         <label class="text-sm font-medium">Password</label>
                         <div class="relative mt-1">
-                            <input id="passwordField" type="password" name="password"
+                            <input id="passwordField" type="password"
                                 class="w-full px-4 pr-12 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
                                 placeholder="Masukkan password">
 
@@ -145,8 +129,9 @@
                 <div class="absolute inset-0 bg-gradient-to-b from-green-700/60 to-green-800/80"></div>
 
 
-                    <a href="{{ url('/') }}" class="absolute top-4 right-4 underline text-sm">
-                        Kembali ke Home
+                <div class="relative text-white p-10 flex flex-col justify-center space-y-6">
+                    <a href="{{ route('pengunjung.home') }}" class="absolute top-4 right-4 underline text-sm">
+                        Masuk ke Home
                     </a>
 
                     <h2 class="text-3xl font-bold max-w-sm">
