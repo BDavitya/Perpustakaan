@@ -24,30 +24,7 @@
 
         <!-- Right Nav -->
         <div class="flex items-center gap-8">
-            <nav class="hidden md:flex items-center gap-6 text-sm text-gray-600">
-                <a href="{{ url('/home-pengunjung') }}" class="hover:text-green-600">Home</a>
-                <a href="{{ url('/katalog') }}" class="hover:text-green-600">Katalog</a>
-                <a href="{{ url('/pengumuman') }}" class="hover:text-green-600">Pengumuman</a>
-                <a href="{{ url('/agenda') }}" class="hover:text-green-600">Agenda</a>
-
-                <div class="relative">
-                    <button id="dropdownBtn" class="flex items-center gap-1 hover:text-green-600">
-                        Lainnya
-                        <svg id="dropdownIcon" class="w-4 h-4 transition" fill="none" stroke="currentColor"
-                             viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-
-                    <div id="dropdownMenu"
-                         class="absolute right-0 mt-2 w-40 bg-white shadow-lg border rounded-lg py-2 text-sm hidden">
-                        <a href="{{ url('/register') }}" class="block px-4 py-2 hover:bg-gray-100">Pendaftaran</a>
-                        <a href="{{ url('/faq') }}" class="block px-4 py-2 hover:bg-gray-100">FAQ</a>
-                        <a href="{{ url('/contact') }}" class="block px-4 py-2 hover:bg-gray-100">Kontak</a>
-                    </div>
-                </div>
-            </nav>
+            @include('pengunjung.navbar')
 
             <a href="{{ url('/login') }}"
                class="hidden md:inline-block px-5 py-2 rounded-lg bg-green-600 text-white text-sm hover:bg-green-700">
@@ -235,49 +212,7 @@ document.getElementById("menuBtn").onclick = () => {
 </section>
 
 <!-- ================= FOOTER ================= -->
-<footer class="bg-gray-900 text-gray-300 pt-10 pb-6">
-    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-6">
-
-        <div>
-            <h4 class="font-semibold text-sm">Perpustakaan Digital</h4>
-            <p class="text-xs text-gray-400 mt-3">
-                Sistem informasi perpustakaan modern.
-            </p>
-        </div>
-
-        <div>
-            <h4 class="font-semibold text-sm mb-3">Tautan Cepat</h4>
-            <ul class="text-xs space-y-2">
-                <li><a href="{{ url('/katalog') }}" class="hover:text-white">Katalog</a></li>
-                <li><a href="{{ url('/agenda') }}" class="hover:text-white">Agenda</a></li>
-                <li><a href="{{ url('/pengumuman') }}" class="hover:text-white">Pengumuman</a></li>
-                <li><a href="{{ url('/register') }}" class="hover:text-white">Pendaftaran</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h4 class="font-semibold text-sm mb-3">Informasi</h4>
-            <ul class="text-xs space-y-2">
-                <li><a href="{{ url('/faq') }}" class="hover:text-white">FAQ</a></li>
-                <li><a href="{{ url('/contact') }}" class="hover:text-white">Kontak</a></li>
-                <li><a href="#" class="hover:text-white">Privasi</a></li>
-                <li><a href="#" class="hover:text-white">Syarat</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h4 class="font-semibold text-sm mb-3">Kontak</h4>
-            <p class="text-xs text-gray-400">Jl. Pendidikan No. 123<br>Jakarta Selatan, 12345</p>
-            <p class="text-xs text-gray-400 mt-2">Telp: (021) 1234-5678</p>
-            <p class="text-xs text-gray-400">Email: info@perpustakaan.id</p>
-        </div>
-
-    </div>
-
-    <div class="border-t border-gray-800 pt-4 text-center text-xs text-gray-500">
-        © 2024 Perpustakaan Digital. All rights reserved.
-    </div>
-</footer>
+@include('pengunjung.footer')
 
 </body>
 </html>

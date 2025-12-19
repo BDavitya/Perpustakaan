@@ -25,31 +25,7 @@
         <div class="flex items-center gap-8">
 
             <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-6 text-sm text-gray-600">
-                <a href="#" class="hover:text-green-600">Home</a>
-                <a href="#" class="hover:text-green-600">Katalog</a>
-                <a href="#" class="hover:text-green-600">Pengumuman</a>
-                <a href="#" class="hover:text-green-600">Agenda</a>
-
-                <div class="relative">
-                    <button id="dropdownBtn" class="flex items-center gap-1 hover:text-green-600">
-                        Lainnya
-                        <svg id="dropdownIcon" xmlns="http://www.w3.org/2000/svg"
-                             class="w-4 h-4 transition duration-300" fill="none"
-                             viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-
-                    <div id="dropdownMenu"
-                        class="absolute right-0 mt-2 w-40 bg-white shadow-lg border rounded-lg py-2 text-sm hidden z-50">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Pendaftaran</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">FAQ</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Kontak</a>
-                    </div>
-                </div>
-            </nav>
+            @include('pengunjung.navbar')
 
             <a href="#"
                class="hidden md:inline-block px-5 py-2 rounded-lg bg-green-600 text-white text-sm font-semibold hover:bg-green-700">
@@ -166,44 +142,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-300 pt-10 pb-6">
-    <div class="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-6">
-
-        <div>
-            <h4 class="font-semibold text-sm">Perpustakaan Digital</h4>
-            <p class="text-xs text-gray-400 mt-3">Akses ribuan buku digital.</p>
-        </div>
-
-        <div>
-            <h4 class="font-semibold text-sm mb-3">Tautan Cepat</h4>
-            <ul class="space-y-2 text-xs">
-                <li><a href="#" class="hover:text-white">Home</a></li>
-                <li><a href="#" class="hover:text-white">Agenda</a></li>
-                <li><a href="#" class="hover:text-white">Pengumuman</a></li>
-                <li><a href="#" class="hover:text-white">Pendaftaran Anggota</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h4 class="font-semibold text-sm mb-3">Informasi</h4>
-            <ul class="space-y-2 text-xs">
-                <li><a href="#" class="hover:text-white">FAQ</a></li>
-                <li><a href="#" class="hover:text-white">Kebijakan Privasi</a></li>
-                <li><a href="#" class="hover:text-white">Syarat & Ketentuan</a></li>
-            </ul>
-        </div>
-
-        <div>
-            <h4 class="font-semibold text-sm mb-3">Kontak</h4>
-            <p class="text-xs text-gray-400">
-                Jl. Pendidikan No. 123<br>
-                Jakarta Selatan, 12345
-            </p>
-            <p class="text-xs text-gray-400 mt-2">info@perpustakaan.id</p>
-        </div>
-
-    </div>
-</footer>
+@include('pengunjung.footer')
 
 <script>
 // Sample book data (replace with actual data from backend)
