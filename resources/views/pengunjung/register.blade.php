@@ -9,6 +9,7 @@
 
 <body class="bg-gray-50 text-gray-800">
 
+    {{-- asdsa --}}
 <!-- ================= HEADER ================= -->
 <header class="bg-white shadow-sm fixed inset-x-0 top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 lg:px-8 py-4 flex items-center justify-between">
