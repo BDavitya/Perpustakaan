@@ -67,4 +67,3 @@ Route::get('/detail-book', function () {
 })->name('detail.book');
 
 Route::get('/pengumuman', [PengumumanController::class, 'index']);
-Route::get('/', [PengumumanController::class, 'home']);
