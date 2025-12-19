@@ -10,13 +10,17 @@
             </div>
         </div>
 
-        <!-- Desktop Nav -->
+        <!-- Right side: Nav + Login + Mobile button -->
         <div class="flex items-center gap-8">
+
+            <!-- Desktop Nav -->
             <nav class="hidden md:flex items-center gap-6 text-sm text-gray-600">
                 <a href="{{ url('/') }}" class="hover:text-green-600">Home</a>
                 <a href="{{ url('/katalog') }}" class="hover:text-green-600">Katalog</a>
-                <a href="{{ url('/pengumuman') }}" class="hover:text-green-600 font-semibold">Pengumuman</a>
+                <a href="{{ url('/pengumuman') }}" class="hover:text-green-600">Pengumuman</a>
                 <a href="{{ url('/agenda') }}" class="hover:text-green-600">Agenda</a>
+
+                <!-- Dropdown -->
                 <div class="relative">
                     <button id="dropdownBtn" class="flex items-center gap-1 hover:text-green-600">
                         Lainnya
@@ -37,11 +41,13 @@
                 </div>
             </nav>
 
+            <!-- Login -->
             <a href="{{ url('/login') }}"
                class="hidden md:inline-block px-5 py-2 rounded-lg bg-green-600 text-white text-sm font-semibold hover:bg-green-700">
                 Login
             </a>
 
+            <!-- Mobile button -->
             <button id="menuBtn" class="md:hidden text-gray-700 text-2xl">
                 ☰
             </button>
@@ -51,13 +57,16 @@
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden bg-white border-t border-gray-200 md:hidden">
         <nav class="flex flex-col p-4 text-sm text-gray-700 space-y-3">
+
             <a href="{{ url('/home-pengunjung') }}">Home</a>
             <a href="{{ url('/katalog') }}">Katalog</a>
-            <a href="{{ url('/pengumuman') }}" class="font-semibold">Pengumuman</a>
+            <a href="{{ url('/pengumuman') }}">Pengumuman</a>
             <a href="{{ url('/agenda') }}">Agenda</a>
 
+            <!-- Dropdown MOBILE -->
             <div class="border-t pt-3">
-                <button id="mobileDropdownBtn" class="flex justify-between w-full text-left py-2">
+                <button id="mobileDropdownBtn"
+                        class="flex justify-between w-full text-left py-2">
                     Lainnya
                     <svg id="mobileDropdownIcon" xmlns="http://www.w3.org/2000/svg"
                         class="w-4 h-4 transition duration-300" fill="none"
@@ -66,6 +75,7 @@
                               d="M19 9l-7 7-7-7" />
                     </svg>
                 </button>
+
                 <div id="mobileDropdownMenu" class="hidden pl-4 space-y-2">
                     <a href="{{ url('/register') }}" class="block py-1">Pendaftaran</a>
                     <a href="{{ url('/faq') }}" class="block py-1">FAQ</a>
