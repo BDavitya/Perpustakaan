@@ -17,7 +17,10 @@ class Buku extends Model
         'penerbit',
         'tahun_terbit',
         'isbn',
-        'status_ketersediaan'
+        'status_ketersediaan',
+        'kategori',
+        'deskripsi',
+        'gambar',
     ];
 
     // Relasi: buku dipinjam banyak kali

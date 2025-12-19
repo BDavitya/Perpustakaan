@@ -16,6 +16,9 @@ return new class extends Migration
             $table->year('tahun_terbit');
             $table->string('isbn', 20)->unique();
             $table->string('status_ketersediaan', 20);
+            $table->string('kategori', 50);
+            $table->text('deskripsi')->nullable();
+            $table->string('gambar')->nullable();
         });
     }
 

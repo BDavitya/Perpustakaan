@@ -127,7 +127,7 @@
             </p>
 
             <div class="mt-6 flex flex-wrap gap-4 justify-center lg:justify-start">
-                <a href="#katalog"
+                <a href="{{ route('katalog') }}"
                    class="px-6 py-3 bg-white text-green-700 rounded-lg text-sm font-semibold shadow hover:bg-gray-100">
                     Jelajahi Buku
                 </a>
@@ -197,29 +197,6 @@
             <p class="text-sm text-gray-500 mt-2">Informasi terbaru untuk Anda</p>
         </div>
 
-        @php 
-        $berita = [
-            [
-                "gambar" => "perpus1.jpg",
-                "tanggal" => "10 Des 2024",
-                "judul" => "Pembukaan Ruang Baca Baru",
-                "desc" => "Perpustakaan kini memiliki ruang baca modern untuk kenyamanan belajar Anda."
-            ],
-            [
-                "gambar" => "perpus2.jpg",
-                "tanggal" => "12 Des 2024",
-                "judul" => "Donasi Buku Akhir Tahun",
-                "desc" => "Ratusan buku baru didonasikan dan siap untuk diakses oleh semua anggota."
-            ],
-            [
-                "gambar" => "perpus3.jpg",
-                "tanggal" => "14 Des 2024",
-                "judul" => "Workshop Menulis Kreatif",
-                "desc" => "Ikuti pelatihan menulis bersama penulis profesional di aula utama."
-            ],
-        ];
-        @endphp
-
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     @foreach ($konten as $p)
         <article class="bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden">
@@ -267,14 +244,14 @@
         </div>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
-            @for ($i = 0; $i < 4; $i++)
+            @foreach ($buku->take(4) as $p)
                 <div class="bg-gray-100 rounded-xl p-3">
-                    <img src="{{ asset('assets/img/book1.jpg') }}" class="w-full h-36 sm:h-40 md:h-48 object-cover rounded-lg mb-2">
-                    <h4 class="text-sm font-semibold truncate">Judul Buku</h4>
-                    <p class="text-xs text-gray-500 mb-2">Penulis</p>
-                    <span class="text-[10px] bg-gray-200 px-2 py-1 rounded-full">Kategori</span>
+                    <img src="{{ asset('assets/img/books/' . $p->gambar) }}" class="w-full h-36 sm:h-40 md:h-48 object-cover rounded-lg mb-2">
+                    <h4 class="text-sm font-semibold truncate">{{ $p->judul }}</h4>
+                    <p class="text-xs text-gray-500 mb-2">{{ $p->penulis }}</p>
+                    <span class="text-[10px] bg-gray-200 px-2 py-1 rounded-full">{{ $p->kategori }}</span>
                 </div>
-            @endfor
+            @endforeach
         </div>
 
         <div class="mt-8 text-center">
@@ -339,9 +316,7 @@
                 <p class="text-center text-sm text-gray-500 mt-2">
                     Akses materi penelitian komprehensif, database, dan bantuan pustakawan ahli untuk proyek Anda.
                 </p>
-                <p class="text-center text-green-700 text-sm font-semibold mt-3 cursor-pointer">
-                    Pelajari Lebih Lanjut
-                </p>
+                
             </div>
 
             <div class="bg-white rounded-2xl shadow-sm p-6 border border-gray-100">
@@ -352,9 +327,7 @@
                 <p class="text-center text-sm text-gray-500 mt-2">
                     Akses internet berkecepatan tinggi di seluruh perpustakaan. Tetap terhubung saat Anda belajar atau bekerja.
                 </p>
-                <p class="text-center text-green-700 text-sm font-semibold mt-3 cursor-pointer">
-                    Pelajari Lebih Lanjut
-                </p>
+                
             </div>
 
             <div class="bg-white rounded-2xl shadow-sm p-6 border border-gray-100">
@@ -365,9 +338,7 @@
                 <p class="text-center text-sm text-gray-500 mt-2">
                     Pesan ruang belajar pribadi dan ruang kolaboratif yang dilengkapi fasilitas modern.
                 </p>
-                <p class="text-center text-green-700 text-sm font-semibold mt-3 cursor-pointer">
-                    Pelajari Lebih Lanjut
-                </p>
+                
             </div>
 
         </div>
@@ -385,11 +356,11 @@
         </p>
 
         <div class="mt-8 flex justify-center gap-4 flex-wrap">
-            <a href="{{ url('/register') }}"
+            <a href="{{ route('register.show') }}"
                class="px-6 py-3 bg-white text-green-700 rounded-lg text-sm font-semibold shadow hover:bg-gray-100">
                 Daftar Sekarang
             </a>
-            <a href="{{ url('/contact') }}"
+            <a href="{{ route('contact') }}"
                class="px-6 py-3 border border-white text-white rounded-lg text-sm font-semibold hover:bg-white hover:text-green-700 transition">
                 Hubungi Kami
             </a>

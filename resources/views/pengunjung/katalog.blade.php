@@ -46,12 +46,12 @@
         <!-- Categories -->
         <div class="flex flex-wrap gap-3 mt-6">
             <button class="category-btn px-5 py-2 text-sm bg-green-600 text-white rounded-full" data-category="all">Semua Buku</button>
-            <button class="category-btn px-5 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-full" data-category="fiksi">Fiksi</button>
-            <button class="category-btn px-5 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-full" data-category="pengembangan">Pengembangan Diri</button>
-            <button class="category-btn px-5 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-full" data-category="keuangan">Keuangan</button>
-            <button class="category-btn px-5 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-full" data-category="sejarah">Sejarah</button>
-            <button class="category-btn px-5 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-full" data-category="produktivitas">Produktivitas</button>
-            <button class="category-btn px-5 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-full" data-category="psikologi">Psikologi</button>
+            <button class="category-btn px-5 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-full" data-category="Fiksi">Fiksi</button>
+            <button class="category-btn px-5 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-full" data-category="Pengembangan">Pengembangan Diri</button>
+            <button class="category-btn px-5 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-full" data-category="Keuangan">Keuangan</button>
+            <button class="category-btn px-5 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-full" data-category="Sejarah">Sejarah</button>
+            <button class="category-btn px-5 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-full" data-category="Produktivitas">Produktivitas</button>
+            <button class="category-btn px-5 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-full" data-category="Psikologi">Psikologi</button>
         </div>
 
     </div>
@@ -68,7 +68,7 @@
 
         <div id="bookGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
             <!-- Books will be dynamically loaded here -->
-        </div>
+        </div>  
 
         <div id="noResults" class="hidden text-center py-12">
             <div class="text-gray-400 text-5xl mb-4">📚</div>
@@ -92,30 +92,30 @@
 
 <script>
 // Sample book data (replace with actual data from backend)
-const allBooks = [
-    { id: 1, judul: 'Atomic Habits', penulis: 'James Clear', tahun: 2018, penerbit: 'Penguin', kategori: 'pengembangan', status: 'Tersedia', isbn: '978-0735211292' },
-    { id: 2, judul: 'Sapiens', penulis: 'Yuval Noah Harari', tahun: 2014, penerbit: 'Harper', kategori: 'sejarah', status: 'Tersedia', isbn: '978-0062316097' },
-    { id: 3, judul: 'Rich Dad Poor Dad', penulis: 'Robert Kiyosaki', tahun: 1997, penerbit: 'Warner Books', kategori: 'keuangan', status: 'Dipinjam', isbn: '978-1612680194' },
-    { id: 4, judul: 'The Psychology of Money', penulis: 'Morgan Housel', tahun: 2020, penerbit: 'Harriman', kategori: 'keuangan', status: 'Tersedia', isbn: '978-0857197689' },
-    { id: 5, judul: 'Deep Work', penulis: 'Cal Newport', tahun: 2016, penerbit: 'Grand Central', kategori: 'produktivitas', status: 'Tersedia', isbn: '978-1455586691' },
-    { id: 6, judul: 'Thinking Fast and Slow', penulis: 'Daniel Kahneman', tahun: 2011, penerbit: 'Farrar', kategori: 'psikologi', status: 'Tersedia', isbn: '978-0374533557' },
-    { id: 7, judul: 'Harry Potter', penulis: 'J.K. Rowling', tahun: 1997, penerbit: 'Bloomsbury', kategori: 'fiksi', status: 'Tersedia', isbn: '978-0439708180' },
-    { id: 8, judul: 'The Alchemist', penulis: 'Paulo Coelho', tahun: 1988, penerbit: 'HarperCollins', kategori: 'fiksi', status: 'Dipinjam', isbn: '978-0062315007' },
-    { id: 9, judul: 'Essentialism', penulis: 'Greg McKeown', tahun: 2014, penerbit: 'Crown', kategori: 'produktivitas', status: 'Tersedia', isbn: '978-0804137386' },
-    { id: 10, judul: 'Man Search for Meaning', penulis: 'Viktor Frankl', tahun: 1946, penerbit: 'Beacon Press', kategori: 'psikologi', status: 'Tersedia', isbn: '978-0807014271' },
-    { id: 11, judul: 'The Intelligent Investor', penulis: 'Benjamin Graham', tahun: 1949, penerbit: 'Harper Business', kategori: 'keuangan', status: 'Tersedia', isbn: '978-0060555665' },
-    { id: 12, judul: 'Homo Deus', penulis: 'Yuval Noah Harari', tahun: 2015, penerbit: 'Harper', kategori: 'sejarah', status: 'Tersedia', isbn: '978-0062464347' },
-    { id: 13, judul: '1984', penulis: 'George Orwell', tahun: 1949, penerbit: 'Secker & Warburg', kategori: 'fiksi', status: 'Tersedia', isbn: '978-0451524935' },
-    { id: 14, judul: 'The Power of Habit', penulis: 'Charles Duhigg', tahun: 2012, penerbit: 'Random House', kategori: 'pengembangan', status: 'Tersedia', isbn: '978-0812981605' },
-    { id: 15, judul: 'Think and Grow Rich', penulis: 'Napoleon Hill', tahun: 1937, penerbit: 'Ralston Society', kategori: 'keuangan', status: 'Dipinjam', isbn: '978-1585424337' },
-    { id: 16, judul: 'The 7 Habits', penulis: 'Stephen Covey', tahun: 1989, penerbit: 'Simon & Schuster', kategori: 'produktivitas', status: 'Tersedia', isbn: '978-0743269513' },
-    { id: 17, judul: 'Influence', penulis: 'Robert Cialdini', tahun: 1984, penerbit: 'Harper Business', kategori: 'psikologi', status: 'Tersedia', isbn: '978-0061241895' },
-    { id: 18, judul: 'The Hobbit', penulis: 'J.R.R. Tolkien', tahun: 1937, penerbit: 'Allen & Unwin', kategori: 'fiksi', status: 'Tersedia', isbn: '978-0547928227' },
-    { id: 19, judul: 'A Brief History of Time', penulis: 'Stephen Hawking', tahun: 1988, penerbit: 'Bantam', kategori: 'sejarah', status: 'Dipinjam', isbn: '978-0553380163' },
-    { id: 20, judul: 'The Lean Startup', penulis: 'Eric Ries', tahun: 2011, penerbit: 'Crown Business', kategori: 'produktivitas', status: 'Tersedia', isbn: '978-0307887894' }
-];
+// const allBooks = [
+//     { id: 1, judul: 'Atomic Habits', penulis: 'James Clear', tahun: 2018, penerbit: 'Penguin', kategori: 'pengembangan', status: 'Tersedia', isbn: '978-0735211292' },
+//     { id: 2, judul: 'Sapiens', penulis: 'Yuval Noah Harari', tahun: 2014, penerbit: 'Harper', kategori: 'sejarah', status: 'Tersedia', isbn: '978-0062316097' },
+//     { id: 3, judul: 'Rich Dad Poor Dad', penulis: 'Robert Kiyosaki', tahun: 1997, penerbit: 'Warner Books', kategori: 'keuangan', status: 'Dipinjam', isbn: '978-1612680194' },
+//     { id: 4, judul: 'The Psychology of Money', penulis: 'Morgan Housel', tahun: 2020, penerbit: 'Harriman', kategori: 'keuangan', status: 'Tersedia', isbn: '978-0857197689' },
+//     { id: 5, judul: 'Deep Work', penulis: 'Cal Newport', tahun: 2016, penerbit: 'Grand Central', kategori: 'produktivitas', status: 'Tersedia', isbn: '978-1455586691' },
+//     { id: 6, judul: 'Thinking Fast and Slow', penulis: 'Daniel Kahneman', tahun: 2011, penerbit: 'Farrar', kategori: 'psikologi', status: 'Tersedia', isbn: '978-0374533557' },
+//     { id: 7, judul: 'Harry Potter', penulis: 'J.K. Rowling', tahun: 1997, penerbit: 'Bloomsbury', kategori: 'fiksi', status: 'Tersedia', isbn: '978-0439708180' },
+//     { id: 8, judul: 'The Alchemist', penulis: 'Paulo Coelho', tahun: 1988, penerbit: 'HarperCollins', kategori: 'fiksi', status: 'Dipinjam', isbn: '978-0062315007' },
+//     { id: 9, judul: 'Essentialism', penulis: 'Greg McKeown', tahun: 2014, penerbit: 'Crown', kategori: 'produktivitas', status: 'Tersedia', isbn: '978-0804137386' },
+//     { id: 10, judul: 'Man Search for Meaning', penulis: 'Viktor Frankl', tahun: 1946, penerbit: 'Beacon Press', kategori: 'psikologi', status: 'Tersedia', isbn: '978-0807014271' },
+//     { id: 11, judul: 'The Intelligent Investor', penulis: 'Benjamin Graham', tahun: 1949, penerbit: 'Harper Business', kategori: 'keuangan', status: 'Tersedia', isbn: '978-0060555665' },
+//     { id: 12, judul: 'Homo Deus', penulis: 'Yuval Noah Harari', tahun: 2015, penerbit: 'Harper', kategori: 'sejarah', status: 'Tersedia', isbn: '978-0062464347' },
+//     { id: 13, judul: '1984', penulis: 'George Orwell', tahun: 1949, penerbit: 'Secker & Warburg', kategori: 'fiksi', status: 'Tersedia', isbn: '978-0451524935' },
+//     { id: 14, judul: 'The Power of Habit', penulis: 'Charles Duhigg', tahun: 2012, penerbit: 'Random House', kategori: 'pengembangan', status: 'Tersedia', isbn: '978-0812981605' },
+//     { id: 15, judul: 'Think and Grow Rich', penulis: 'Napoleon Hill', tahun: 1937, penerbit: 'Ralston Society', kategori: 'keuangan', status: 'Dipinjam', isbn: '978-1585424337' },
+//     { id: 16, judul: 'The 7 Habits', penulis: 'Stephen Covey', tahun: 1989, penerbit: 'Simon & Schuster', kategori: 'produktivitas', status: 'Tersedia', isbn: '978-0743269513' },
+//     { id: 17, judul: 'Influence', penulis: 'Robert Cialdini', tahun: 1984, penerbit: 'Harper Business', kategori: 'psikologi', status: 'Tersedia', isbn: '978-0061241895' },
+//     { id: 18, judul: 'The Hobbit', penulis: 'J.R.R. Tolkien', tahun: 1937, penerbit: 'Allen & Unwin', kategori: 'fiksi', status: 'Tersedia', isbn: '978-0547928227' },
+//     { id: 19, judul: 'A Brief History of Time', penulis: 'Stephen Hawking', tahun: 1988, penerbit: 'Bantam', kategori: 'sejarah', status: 'Dipinjam', isbn: '978-0553380163' },
+//     { id: 20, judul: 'The Lean Startup', penulis: 'Eric Ries', tahun: 2011, penerbit: 'Crown Business', kategori: 'produktivitas', status: 'Tersedia', isbn: '978-0307887894' }
+// ];
 
-// const allBooks = @json($buku);
+const allBooks = @json($buku);
 
 let currentBooks = [...allBooks];
 let currentCategory = 'all';
@@ -151,26 +151,26 @@ function renderBooks(books) {
     const startIndex = (currentPage - 1) * booksPerPage;
     const endIndex = startIndex + booksPerPage;
     const paginatedBooks = books.slice(startIndex, endIndex);
+    const assetBase = "{{ asset('assets/img/books') }}";
+    const detailRoute = "{{ route('buku.show', ':id') }}";
     
     grid.innerHTML = paginatedBooks.map(book => `
-        <a href="#" class="bg-white rounded-xl shadow hover:shadow-md transition p-3 flex flex-col">
+        <a href="${detailRoute.replace(':id', book.id_buku)}" class="bg-white rounded-xl shadow hover:shadow-md transition p-3 flex flex-col">
             <div class="rounded-xl overflow-hidden bg-gradient-to-br from-green-400 to-green-600">
-                <div class="w-full h-40 flex items-center justify-center text-white font-bold text-2xl">
-                    ${book.judul.charAt(0)}
-                </div>
+               <img src="${assetBase}/${book.gambar}" alt="${book.judul}" class="w-full h-40 object-cover">
             </div>
 
-            ${book.status === 'Tersedia' 
+            ${book.status_ketersediaan === 'Tersedia' 
                 ? '<span class="mt-3 inline-block text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full w-fit">Tersedia</span>'
                 : '<span class="mt-3 inline-block text-xs bg-red-100 text-red-700 px-3 py-1 rounded-full w-fit">Dipinjam</span>'
             }
 
             <h4 class="font-semibold text-sm mt-2">${book.judul}</h4>
             <p class="text-xs text-gray-500">${book.penulis}</p>
-            <p class="text-xs text-gray-400">${book.tahun}</p>
+            <p class="text-xs text-gray-400">${book.tahun_terbit}</p>
 
             <span class="mt-2 text-[10px] bg-gray-100 px-2 py-1 rounded-full text-gray-600 w-fit">
-                ${book.penerbit}
+                ${book.kategori}
             </span>
         </a>
     `).join('');

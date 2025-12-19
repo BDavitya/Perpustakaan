@@ -26,7 +26,7 @@
 
     <!-- Image -->
     <div>
-        <img src="{{ asset('assets/img/book1.jpg') }}"
+        <img src="{{ asset('assets/img/books/' . $buku->gambar) }}"
              class="rounded-2xl shadow w-full object-cover h-[480px]">
     </div>
 
