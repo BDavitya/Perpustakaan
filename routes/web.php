@@ -6,10 +6,9 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PengumumanController;
 
-// ==========================
-// ROUTE HALAMAN PENGUNJUNG
-// ==========================
+Route::name('pengunjung.')->group(function () {
 
+<<<<<<< Updated upstream
 // HOME PENGUNJUNG
 // Route::get('/', function () {
 //     return view('pengunjung.home_pengunjung');
@@ -71,3 +70,27 @@ Route::get('/detail-book', function () {
 })->name('detail.book');
 
 Route::get('/pengumuman', [PengumumanController::class, 'index']);
+=======
+    // HOME
+    Route::view('/', 'pengunjung.home_pengunjung')->name('home');
+
+    // AUTH
+    Route::view('/login', 'pengunjung.login')->name('login');
+    Route::view('/password', 'pengunjung.password')->name('password');
+    Route::view('/register', 'pengunjung.register')->name('register');
+
+    // MENU UTAMA
+    Route::view('/katalog', 'pengunjung.katalog')->name('katalog');
+    Route::view('/pengumuman', 'pengunjung.pengumuman')->name('pengumuman');
+    Route::view('/agenda', 'pengunjung.agenda')->name('agenda');
+
+    // INFORMASI
+    Route::view('/faq', 'pengunjung.faq')->name('faq');
+    Route::view('/contact', 'pengunjung.contact')->name('contact');
+
+    // DETAIL
+    Route::view('/detail-book', 'pengunjung.detail_book')->name('detail_book');
+    Route::view('/detail-pengumuman', 'pengunjung.detail_pengumuman')->name('detail_pengumuman');
+
+});
+>>>>>>> Stashed changes

@@ -42,24 +42,12 @@
             </a>
 
             <h2 class="text-2xl font-bold leading-snug">
-                Akses Ribuan Koleksi Buku Digital
+                Buat Password Baru
             </h2>
 
             <p class="text-sm text-white/90">
-                Login untuk meminjam buku, melihat riwayat peminjaman,
-                dan mengakses fitur perpustakaan digital kami.
+                Masukkan password baru untuk akun ahmad@email.com
             </p>
-
-            <div class="space-y-3 pt-4">
-                <div>
-                    <p class="font-semibold">12,500+ Koleksi Buku</p>
-                    <p class="text-sm text-white/80">Berbagai kategori tersedia</p>
-                </div>
-                <div>
-                    <p class="font-semibold">Peminjaman Mudah</p>
-                    <p class="text-sm text-white/80">Proses cepat dan praktis</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -85,19 +73,6 @@
                 <h2 class="text-xl font-bold">Selamat Datang Kembali</h2>
                 <p class="text-gray-600 text-sm mt-1">Silakan login untuk melanjutkan</p>
 
-<<<<<<< Updated upstream
-                <!-- FORM -->
-                <form class="mt-6 space-y-6" action="{{ route('login.store') }}" method="POST">
-                    @csrf
-                    <!-- EMAIL -->
-                    <div>
-                        <label class="font-medium">Email</label>
-                        <div class="relative mt-1">
-                            <input type="email" name="email"
-                                class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
-                                placeholder="Masukkan email">
-                        </div>
-=======
                 <form class="mt-6 space-y-5">
 
                     <div>
@@ -105,13 +80,12 @@
                         <input type="email"
                             class="mt-1 w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
                             placeholder="nama@email.com">
->>>>>>> Stashed changes
                     </div>
 
                     <div>
                         <label class="text-sm font-medium">Password</label>
                         <div class="relative mt-1">
-                            <input id="passwordField" type="password" name="password"
+                            <input id="passwordField" type="password"
                                 class="w-full px-4 pr-12 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
                                 placeholder="Masukkan password">
 
